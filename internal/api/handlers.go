@@ -2,16 +2,14 @@ package api
 
 import (
 	"encoding/json"
-	"net/http"
 	"github.com/gorilla/mux"
-
+	"net/http"
 )
 
 type User struct {
-	ID	string `json:"id"`
-	Name	string `json:"name`
+	ID    string `json:"id"`
+	Name  string `json:"name"`
 	Email string `json:"email"`
-
 }
 
 var users = []User{
@@ -69,11 +67,11 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func DeleteUser(w http.ResponseWriter r * http.Request) {
+func DeleteUser(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	for index, item := range users {
 		if item.ID == params["id"] {
-			users = append(users[:index], users[index+1]...)
+			users = append(users[:index], users[:index+1]...)
 			break
 		}
 	}

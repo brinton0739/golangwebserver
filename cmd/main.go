@@ -1,8 +1,10 @@
 package main
 
 import (
+	"github.com/brinton0739/golangwebserver/internal/api"
+	"github.com/brinton0739/golangwebserver/internal/database"
+	"github.com/brinton0739/golangwebserver/internal/models"
 	"github.com/gorilla/mux"
-	"internal/api"
 	"log"
 	"net/http"
 )
